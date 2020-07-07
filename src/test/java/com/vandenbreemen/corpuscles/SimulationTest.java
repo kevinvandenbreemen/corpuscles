@@ -18,4 +18,27 @@ public class SimulationTest {
 
     }
 
+    @Test
+    public void testActivateHasNoEffectBeforeNextEpoch() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        simulation.activate(1,1);
+        assertFalse(data.activated(1,1));
+    }
+
+    @Test
+    public void testDeactivateHasNoEffectBeforeNextEpoch() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.activate(1,1);
+        Simulation simulation = new Simulation(data);
+
+        simulation.deactivate(1,1);
+        assertTrue(data.activated(1,1));
+
+        simulation.nextEpoch();
+
+        assertFalse(data.activated(1,1));
+    }
+
 }

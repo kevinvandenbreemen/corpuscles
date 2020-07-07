@@ -35,4 +35,12 @@ public class Simulation {
     public void nextEpoch() {
         this.data.overwriteWith(this.dataCopy);
     }
+
+    public boolean activated(int alongHeight, int alongWidth) {
+        return data.activated(alongHeight, alongWidth);
+    }
+
+    public void deactivate(int alongHeight, int alongWidth) {
+        dataCopy.deactivate(alongHeight, alongWidth);
+    }
 }
