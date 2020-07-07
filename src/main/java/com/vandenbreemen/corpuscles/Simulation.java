@@ -5,8 +5,15 @@ package com.vandenbreemen.corpuscles;
  */
 public class Simulation {
 
+    /**
+     * The underlying actual "reality" of the world of the simulation
+     */
     private CorpusclesData data;
 
+    /**
+     * Copy.  This is where changes get made during processing of each epoch.  When a new epoch begins
+     * the contents of this are written to the {@link #data}.
+     */
     private CorpusclesData dataCopy;
 
     public Simulation(CorpusclesData data) {
@@ -22,6 +29,9 @@ public class Simulation {
         this.dataCopy.activate(alongHeight, alongWidth);
     }
 
+    /**
+     * Transitions the simulation to the next epoch
+     */
     public void nextEpoch() {
         this.data.overwriteWith(this.dataCopy);
     }
