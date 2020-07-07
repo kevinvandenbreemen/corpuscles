@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.bandenbreemen'
-version '1.0-SNAPSHOT'
+version '1.0.0.1000'
 
 repositories {
     mavenCentral()
