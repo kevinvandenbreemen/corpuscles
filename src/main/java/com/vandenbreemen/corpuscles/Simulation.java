@@ -71,24 +71,14 @@ public class Simulation {
             wMin = width()-1;
         }
 
+        hMax %= height();
+        wMax %= width();
+
         return new int[] {
             hMin,
             hMax,
             wMin,
             wMax
         };
-
-//        if(hMin < 0) {
-//            hMin = 0;
-//        }
-//        if(hMax > (simulation.height()-1)) {
-//            hMax = simulation.height()-1;
-//        }
-//        if(wMin < 0) {
-//            wMin = 0;
-//        }
-//        if(wMax > (simulation.width()-1)) {
-//            wMax = simulation.width()-1;
-//        }
     }
 }

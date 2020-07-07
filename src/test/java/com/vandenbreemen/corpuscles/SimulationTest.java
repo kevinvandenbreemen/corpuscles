@@ -73,4 +73,14 @@ public class SimulationTest {
         assertEquals(1, ranges[3]);
     }
 
+    @Test
+    public void testGetNeighbourhoodBoundsOverTorusSpaceMaxEdges() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+        int[] ranges = simulation.getMooreNeighbourhoodRange(9,9);
+        assertEquals(8, ranges[0]);
+        assertEquals(0, ranges[1]);
+        assertEquals(8, ranges[2]);
+        assertEquals(0, ranges[3]);
+    }
 }
