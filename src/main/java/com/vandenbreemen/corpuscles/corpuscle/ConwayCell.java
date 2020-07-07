@@ -46,5 +46,15 @@ public class ConwayCell extends Corpuscle {
             simulation.activate(alongHeight, alongWidth);
         }
 
+        //  Any live cell with fewer than two live neighbours dies, as if by underpopulation.
+        if(aliveCount < 2 && simulation.activated(alongHeight, alongWidth)) {
+            simulation.deactivate(alongHeight, alongWidth);
+        }
+
+        //  Any live cell with more than three live neighbours dies, as if by overpopulation.
+        if(aliveCount > 3 && simulation.activated(alongHeight, alongWidth)) {
+            simulation.deactivate(alongHeight, alongWidth);
+        }
+
     }
 }
