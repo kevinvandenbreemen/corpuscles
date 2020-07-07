@@ -18,4 +18,8 @@ public class CorpusclesData {
     public void activate(int alongHeight, int alongWidth) {
         data[alongHeight][alongWidth] |= (1 << 0);
     }
+
+    public void deactivate(int alongHeight, int alongWidth) {
+        data[alongHeight][alongWidth] &= ~(1 << 0);
+    }
 }

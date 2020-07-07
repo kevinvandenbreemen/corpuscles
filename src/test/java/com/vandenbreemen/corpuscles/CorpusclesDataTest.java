@@ -28,4 +28,12 @@ public class CorpusclesDataTest {
         assertTrue(data.activated(2, 1));
     }
 
+    @Test
+    public void testDeactivate() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.activate(2,1);
+        data.deactivate(2, 1);
+        assertFalse(data.activated(2, 1));
+    }
+
 }
