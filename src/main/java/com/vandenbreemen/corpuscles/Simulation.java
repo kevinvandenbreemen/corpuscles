@@ -43,4 +43,12 @@ public class Simulation {
     public void deactivate(int alongHeight, int alongWidth) {
         dataCopy.deactivate(alongHeight, alongWidth);
     }
+
+    public int width() {
+        return data.data[0].length;
+    }
+
+    public int height() {
+        return data.data.length;
+    }
 }

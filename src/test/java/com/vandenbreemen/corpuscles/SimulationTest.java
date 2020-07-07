@@ -53,4 +53,13 @@ public class SimulationTest {
         assertTrue(simulation.activated(1,1));
     }
 
+    @Test
+    public void testGetLengthWidth() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        assertEquals(10, simulation.width());
+        assertEquals(10, simulation.height());
+    }
+
 }
