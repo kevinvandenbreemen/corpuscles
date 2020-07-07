@@ -41,4 +41,16 @@ public class SimulationTest {
         assertFalse(data.activated(1,1));
     }
 
+    @Test
+    public void testGetsActivationStatus() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.activate(1,1);
+        Simulation simulation = new Simulation(data);
+
+        //  Simulation deactivate means queue up deactivated state
+        simulation.deactivate(1,1);
+
+        assertTrue(simulation.activated(1,1));
+    }
+
 }
