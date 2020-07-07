@@ -51,4 +51,44 @@ public class Simulation {
     public int height() {
         return data.data.length;
     }
+
+    /**
+     * Generates min/max height and width values to use when visiting the Moore neighbourhood of a given cell
+     * @param alongHeight   Where along the height of the simulation to start
+     * @param alongWidth    Where along the width of the simulation to start
+     * @return              An array with 4 items:  [hMin, hMax, wMin, wMax]
+     */
+    public int[] getMooreNeighbourhoodRange(int alongHeight, int alongWidth) {
+        int hMin = alongHeight-1;
+        int hMax = alongHeight + 1;
+        int wMin = alongWidth - 1;
+        int wMax = alongWidth + 1;
+
+        if(hMin < 0) {
+            hMin = height()-1;
+        }
+        if(wMin < 0) {
+            wMin = width()-1;
+        }
+
+        return new int[] {
+            hMin,
+            hMax,
+            wMin,
+            wMax
+        };
+
+//        if(hMin < 0) {
+//            hMin = 0;
+//        }
+//        if(hMax > (simulation.height()-1)) {
+//            hMax = simulation.height()-1;
+//        }
+//        if(wMin < 0) {
+//            wMin = 0;
+//        }
+//        if(wMax > (simulation.width()-1)) {
+//            wMax = simulation.width()-1;
+//        }
+    }
 }

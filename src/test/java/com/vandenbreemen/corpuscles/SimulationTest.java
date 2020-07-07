@@ -62,4 +62,15 @@ public class SimulationTest {
         assertEquals(10, simulation.height());
     }
 
+    @Test
+    public void testGetNeighbourhoodBoundsOverTorusSpace() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+        int[] ranges = simulation.getMooreNeighbourhoodRange(0,0);
+        assertEquals(9, ranges[0]);
+        assertEquals(1, ranges[1]);
+        assertEquals(9, ranges[2]);
+        assertEquals(1, ranges[3]);
+    }
+
 }
