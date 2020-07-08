@@ -22,7 +22,7 @@ public class CellularAutomaton {
      * @param simulation    Simulation in which to operate the {@link Corpuscle}
      * @return
      */
-    public Corpuscle getCorpuscle(int alongWidth, int alongHeight, Simulation simulation) {
+    protected Corpuscle getCorpuscle(int alongWidth, int alongHeight, Simulation simulation) {
         return new ConwayCell(simulation);
     }
 
