@@ -81,4 +81,8 @@ public class Simulation {
             wMax
         };
     }
+
+    public byte data(int alongHeight, int alongWidth) {
+        return data.data[alongHeight][alongWidth];
+    }
 }

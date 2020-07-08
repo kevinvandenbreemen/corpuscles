@@ -83,4 +83,20 @@ public class SimulationTest {
         assertEquals(8, ranges[2]);
         assertEquals(0, ranges[3]);
     }
+
+    /**
+     * Get the raw data at a given cell
+     */
+    @Test
+    public void testGetDataAtCell() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        simulation.activate(5,5);
+        simulation.nextEpoch();
+
+        byte dataByte = simulation.data(5,5);
+
+        assertEquals(1, dataByte);
+    }
 }
