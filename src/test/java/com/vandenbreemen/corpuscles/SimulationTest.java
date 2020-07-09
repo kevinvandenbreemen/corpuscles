@@ -100,4 +100,30 @@ public class SimulationTest {
 
         assertEquals(1, dataByte);
     }
+
+    @Test
+    public void testTurnOnBit() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        simulation.activate(5,5);
+        simulation.setBit(5, 5, 1, true);
+        simulation.nextEpoch();
+
+        //  Bits 1 and 0 are on (2+1)
+        assertEquals(3, simulation.data(5,5));
+    }
+
+    @Test
+    public void testTurnOffBit() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        simulation.activate(5,5);
+        simulation.setBit(5, 5, 0, false);  //  Same as deactivating!
+        simulation.nextEpoch();
+
+        //  Bits 1 and 0 are on (2+1)
+        assertEquals(0, simulation.data(5,5));
+    }
 }
