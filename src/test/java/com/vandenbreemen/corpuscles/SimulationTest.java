@@ -68,10 +68,10 @@ public class SimulationTest {
         CorpusclesData data = new CorpusclesData(10, 10);
         Simulation simulation = new Simulation(data);
         int[] ranges = simulation.getMooreNeighbourhoodRange(0,0);
-        assertEquals(9, ranges[0]);
-        assertEquals(1, ranges[1]);
-        assertEquals(9, ranges[2]);
-        assertEquals(1, ranges[3]);
+        assertEquals(9, ranges[HEIGHT_MIN]);
+        assertEquals(1, ranges[HEIGHT_MAX]);
+        assertEquals(9, ranges[WIDTH_MIN]);
+        assertEquals(1, ranges[WIDTH_MAX]);
     }
 
     @Test
