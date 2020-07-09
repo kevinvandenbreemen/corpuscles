@@ -5,6 +5,13 @@ package com.vandenbreemen.corpuscles;
  */
 public class Simulation {
 
+    public static class NeighbourHoodRange {
+        public static final int HEIGHT_MIN = 0;
+        public static final int HEIGHT_MAX = 1;
+        public static final int WIDTH_MIN = 2;
+        public static final int WIDTH_MAX = 3;
+    }
+
     /**
      * The underlying actual "reality" of the world of the simulation
      */

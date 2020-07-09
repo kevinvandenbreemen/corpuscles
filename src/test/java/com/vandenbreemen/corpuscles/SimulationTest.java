@@ -2,6 +2,7 @@ package com.vandenbreemen.corpuscles;
 
 import org.junit.Test;
 
+import static com.vandenbreemen.corpuscles.Simulation.NeighbourHoodRange.*;
 import static org.junit.Assert.*;
 
 public class SimulationTest {
@@ -78,10 +79,10 @@ public class SimulationTest {
         CorpusclesData data = new CorpusclesData(10, 10);
         Simulation simulation = new Simulation(data);
         int[] ranges = simulation.getMooreNeighbourhoodRange(9,9);
-        assertEquals(8, ranges[0]);
-        assertEquals(0, ranges[1]);
-        assertEquals(8, ranges[2]);
-        assertEquals(0, ranges[3]);
+        assertEquals(8, ranges[HEIGHT_MIN]);
+        assertEquals(0, ranges[HEIGHT_MAX]);
+        assertEquals(8, ranges[WIDTH_MIN]);
+        assertEquals(0, ranges[WIDTH_MAX]);
     }
 
     /**
