@@ -32,4 +32,30 @@ public class CorpusclesData {
     public void deactivate(int alongHeight, int alongWidth) {
         data[alongHeight][alongWidth] &= ~(1 << 0);
     }
+
+    /**
+     * Turns the bit at the given position on or off
+     * @param alongHeight       Where along the height of the grid
+     * @param alongWidth
+     * @param atPosition
+     * @param to                Whether the bit is to be enabled/disabled
+     */
+    public void setBit(int alongHeight, int alongWidth, int atPosition, boolean to) {
+        if(to){
+            data[alongHeight][alongWidth] |= (1<<atPosition);
+        }  else {
+            data[alongHeight][alongWidth] &= ~(1<<atPosition);
+        }
+    }
+
+    /**
+     * Returns whether the bit at the given position is on
+     * @param alongWidth
+     * @param alongHeight
+     * @param at            Position along byte at position alongWidth, alongHeight
+     * @return              True if the bit is on
+     */
+    public boolean bitIsOn(int alongWidth, int alongHeight, int at) {
+        return (data[alongHeight][alongWidth] & (1<<at)) != 0;
+    }
 }

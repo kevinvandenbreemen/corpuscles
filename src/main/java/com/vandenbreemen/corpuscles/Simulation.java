@@ -51,19 +51,12 @@ public class Simulation {
         dataCopy.deactivate(alongHeight, alongWidth);
     }
 
-    /**
-     * Turns the bit at the given position on or off
-     * @param alongHeight       Where along the height of the grid
-     * @param alongWidth
-     * @param atPosition
-     * @param to                Whether the bit is to be enabled/disabled
-     */
     public void setBit(int alongHeight, int alongWidth, int atPosition, boolean to) {
-        if(to){
-            dataCopy.data[alongHeight][alongWidth] |= (1<<atPosition);
-        }  else {
-            dataCopy.data[alongHeight][alongWidth] &= ~(1<<atPosition);
-        }
+        dataCopy.setBit(alongHeight, alongWidth, atPosition, to);
+    }
+
+    public boolean bitIsOn(int alongWidth, int alongHeight, int at) {
+        return data.bitIsOn(alongWidth, alongHeight, at);
     }
 
     public int width() {

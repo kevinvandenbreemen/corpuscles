@@ -123,7 +123,29 @@ public class SimulationTest {
         simulation.setBit(5, 5, 0, false);  //  Same as deactivating!
         simulation.nextEpoch();
 
-        //  Bits 1 and 0 are on (2+1)
         assertEquals(0, simulation.data(5,5));
+    }
+
+    @Test
+    public void testGetBitAtPosition() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        simulation.activate(5,5);
+        simulation.setBit(5, 5, 4, true);
+        simulation.nextEpoch();
+
+        assertTrue(simulation.bitIsOn(5,5,4));
+    }
+
+    @Test
+    public void testGetBitAtPositionOffByDefault() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+
+        simulation.activate(5,5);
+        simulation.nextEpoch();
+
+        assertFalse(simulation.bitIsOn(5,5,4));
     }
 }
