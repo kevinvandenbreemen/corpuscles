@@ -55,8 +55,8 @@ public class Simulation {
         dataCopy.setBit(alongHeight, alongWidth, atPosition, to);
     }
 
-    public boolean bitIsOn(int alongWidth, int alongHeight, int at) {
-        return data.bitIsOn(alongWidth, alongHeight, at);
+    public boolean bitIsOn(int alongHeight, int alongWidth, int at) {
+        return data.bitIsOn(alongHeight, alongWidth, at);
     }
 
     public int width() {

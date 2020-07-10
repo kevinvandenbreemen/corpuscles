@@ -50,19 +50,19 @@ public class CorpusclesData {
 
     /**
      * Returns whether the bit at the given position is on
-     * @param alongWidth
      * @param alongHeight
+     * @param alongWidth
      * @param at            Position along byte at position alongWidth, alongHeight
      * @return              True if the bit is on
      */
-    public boolean bitIsOn(int alongWidth, int alongHeight, int at) {
+    public boolean bitIsOn(int alongHeight, int alongWidth, int at) {
         return (data[alongHeight][alongWidth] & (1<<at)) != 0;
     }
 
     public byte value(int alongHeight, int alongWidth, int fromLowest, int toHighest) {
         byte val = 0;
         for(int i=fromLowest; i<=toHighest; i++) {
-            if(bitIsOn(alongWidth, alongHeight, i)) {
+            if(bitIsOn(alongHeight, alongWidth, i)) {
                 val += (1<<i);
             }
         }

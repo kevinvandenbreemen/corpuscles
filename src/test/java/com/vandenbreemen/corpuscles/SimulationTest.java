@@ -135,7 +135,7 @@ public class SimulationTest {
         simulation.setBit(5, 5, 4, true);
         simulation.nextEpoch();
 
-        assertTrue(simulation.bitIsOn(5,5,4));
+        assertTrue(simulation.bitIsOn(5, 5, 4));
     }
 
     @Test
@@ -146,6 +146,6 @@ public class SimulationTest {
         simulation.activate(5,5);
         simulation.nextEpoch();
 
-        assertFalse(simulation.bitIsOn(5,5,4));
+        assertFalse(simulation.bitIsOn(5, 5, 4));
     }
 }
