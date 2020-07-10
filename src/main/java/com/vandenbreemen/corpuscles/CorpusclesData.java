@@ -72,4 +72,12 @@ public class CorpusclesData {
     public void writeData(int alongHeight, int alongWidth, byte rawByte) {
         data[alongHeight][alongWidth] = rawByte;
     }
+
+    public int width() {
+        return data[0].length;
+    }
+
+    public int height() {
+        return data.length;
+    }
 }

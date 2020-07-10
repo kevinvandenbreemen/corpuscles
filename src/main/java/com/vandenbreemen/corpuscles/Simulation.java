@@ -60,11 +60,11 @@ public class Simulation {
     }
 
     public int width() {
-        return data.data[0].length;
+        return data.width();
     }
 
     public int height() {
-        return data.data.length;
+        return data.height();
     }
 
     /**
