@@ -58,4 +58,14 @@ public class CorpusclesData {
     public boolean bitIsOn(int alongWidth, int alongHeight, int at) {
         return (data[alongHeight][alongWidth] & (1<<at)) != 0;
     }
+
+    public byte value(int alongHeight, int alongWidth, int fromLowest, int toHighest) {
+        byte val = 0;
+        for(int i=fromLowest; i<=toHighest; i++) {
+            if(bitIsOn(alongWidth, alongHeight, i)) {
+                val += (1<<i);
+            }
+        }
+        return val;
+    }
 }

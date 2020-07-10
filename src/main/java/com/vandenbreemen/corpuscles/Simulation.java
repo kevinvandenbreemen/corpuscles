@@ -100,4 +100,16 @@ public class Simulation {
     public byte data(int alongHeight, int alongWidth) {
         return data.data[alongHeight][alongWidth];
     }
+
+    /**
+     * Gets the current value at the given position/bit range of the reality
+     * @param alongHeight
+     * @param alongWidth
+     * @param fromLowest
+     * @param toHighest
+     * @return
+     */
+    public byte value(int alongHeight, int alongWidth, int fromLowest, int toHighest) {
+        return data.value(alongHeight, alongWidth, fromLowest, toHighest);
+    }
 }
