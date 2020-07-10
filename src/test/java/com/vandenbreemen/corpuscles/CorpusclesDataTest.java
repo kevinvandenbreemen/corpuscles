@@ -46,4 +46,13 @@ public class CorpusclesDataTest {
         assertEquals(11, data.value(2,2,0, 3));
     }
 
+    @Test
+    public void testWriteByte() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte) 3);
+        assertTrue(data.bitIsOn(2,2,0));
+        assertTrue(data.bitIsOn(2,2,1));
+        assertFalse(data.bitIsOn(2,2,3));
+    }
+
 }
