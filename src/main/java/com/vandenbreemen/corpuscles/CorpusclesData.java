@@ -69,6 +69,10 @@ public class CorpusclesData {
         return val;
     }
 
+    public byte data(int alongHeight, int alongWidth) {
+        return data[alongHeight][alongWidth];
+    }
+
     public void writeData(int alongHeight, int alongWidth, byte rawByte) {
         data[alongHeight][alongWidth] = rawByte;
     }

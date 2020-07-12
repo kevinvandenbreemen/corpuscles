@@ -98,7 +98,7 @@ public class Simulation {
     }
 
     public byte data(int alongHeight, int alongWidth) {
-        return data.data[alongHeight][alongWidth];
+        return data.data(alongHeight, alongWidth);
     }
 
     /**
