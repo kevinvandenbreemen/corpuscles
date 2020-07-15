@@ -15,7 +15,7 @@ public class CorpusclesData {
      * Overwrite the data in this {@link CorpusclesData} with that found in the given data
      * @param data
      */
-    void overwriteWith(CorpusclesData data) {
+    protected void overwriteWith(CorpusclesData data) {
         for (int i = 0; i < this.data.length; i++) {
             System.arraycopy(data.data[i], 0, this.data[i], 0, this.data[0].length);
         }
