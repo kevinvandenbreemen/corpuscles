@@ -28,8 +28,18 @@ public class Simulation {
 
         int height = this.data.data.length;
         int width = this.data.data[0].length;
-        dataCopy = new CorpusclesData(height, width);
+        dataCopy = buildDataCopy(height, width);
         dataCopy.overwriteWith(this.data);
+    }
+
+    /**
+     * Generate a copy of the data for use as scratchpad state written to by corpuscles
+     * @param height
+     * @param width
+     * @return
+     */
+    protected CorpusclesData buildDataCopy(int height, int width) {
+        return new CorpusclesData(height, width);
     }
 
     public void activate(int alongHeight, int alongWidth) {
