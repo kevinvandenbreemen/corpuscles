@@ -55,4 +55,31 @@ public class CorpusclesDataTest {
         assertFalse(data.bitIsOn(2,2,3));
     }
 
+    @Test
+    public void testReadValueFromRangeOfByte() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte) 3);
+
+        byte value = data.data(2,2, 1,2);
+        assertEquals(1,value);
+    }
+
+    @Test
+    public void testReadValueFromRangeOfByteLargerRange() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, Byte.MAX_VALUE);
+
+        byte value = data.data(2,2, 2,5);
+        assertEquals(15,value);
+    }
+
+    @Test
+    public void testReadFullRangeOfByte() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, Byte.MAX_VALUE);
+
+        byte value = data.data(2,2, 0,7);
+        assertEquals(Byte.MAX_VALUE,value);
+    }
+
 }

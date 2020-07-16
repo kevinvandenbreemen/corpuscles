@@ -84,4 +84,25 @@ public class CorpusclesData {
     public int height() {
         return data.length;
     }
+
+    /**
+     * Gets a byte whose bits (from min to max position) are set to the corresponding bits along the given range.  For example,
+     * if you call this method specifing 3 to 5 then the first three bits will be set on/off on the resulting byte based on whether
+     * the corresponding bits at positions 3 through 5 are on.
+     * @param alongHeight
+     * @param alongWidth
+     * @param fromMinBit
+     * @param toMaxBit
+     * @return
+     */
+    public byte data(int alongHeight, int alongWidth, int fromMinBit, int toMaxBit) {
+        byte value=0;
+        for(int i=0; i<=toMaxBit-fromMinBit; i++) {
+            if(bitIsOn(alongHeight, alongWidth, (fromMinBit+i))) {
+                value |= (1<<i);
+            }
+        }
+
+        return value;
+    }
 }
