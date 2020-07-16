@@ -82,4 +82,13 @@ public class CorpusclesDataTest {
         assertEquals(Byte.MAX_VALUE,value);
     }
 
+    @Test
+    public void testReadRangeWhenSomeBitsOff() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)4);
+
+        byte value = data.data(2,2, 2,6);
+        assertEquals(1,value);
+    }
+
 }
