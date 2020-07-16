@@ -91,4 +91,23 @@ public class CorpusclesDataTest {
         assertEquals(1,value);
     }
 
+    @Test
+    public void testWriteByteToRange() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)5, 1, 4);
+
+        assertEquals(10, data.data(2,2));
+
+    }
+
+    @Test
+    public void testWriteByteToRangeTurnsOffBits() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)12);
+        data.writeData(2,2, (byte)5, 1, 4);
+
+        assertEquals(10, data.data(2,2));
+
+    }
+
 }

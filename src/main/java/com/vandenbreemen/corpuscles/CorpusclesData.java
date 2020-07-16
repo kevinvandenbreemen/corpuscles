@@ -105,4 +105,10 @@ public class CorpusclesData {
 
         return value;
     }
+
+    public void writeData(int alongHeight, int alongWidth, byte data, int fromMinBit, int toMaxBit) {
+        for(int i=0; i<=toMaxBit-fromMinBit; i++) {
+            setBit(alongHeight, alongWidth, fromMinBit + i, (data & (1<<i)) != 0);
+        }
+    }
 }
