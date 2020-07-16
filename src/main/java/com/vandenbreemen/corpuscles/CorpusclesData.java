@@ -106,6 +106,15 @@ public class CorpusclesData {
         return value;
     }
 
+    /**
+     * Writes bits from the given byte to bits along the specified range at the specified location.  For example, if you pass in
+     * 00001010, 1, 4 to this method and the byte at (alongHeight, alongWidth) is 00001111 then that byte will become 00010101
+     * @param alongHeight
+     * @param alongWidth
+     * @param data              Raw byte you want to write
+     * @param fromMinBit        Minimum bit position of the byte at (alongHeight,alongWidth) to write to
+     * @param toMaxBit          Maximum bit position of the byte at (alongHeight, alongWidth) to write to
+     */
     public void writeData(int alongHeight, int alongWidth, byte data, int fromMinBit, int toMaxBit) {
         for(int i=0; i<=toMaxBit-fromMinBit; i++) {
             setBit(alongHeight, alongWidth, fromMinBit + i, (data & (1<<i)) != 0);
