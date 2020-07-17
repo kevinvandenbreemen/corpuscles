@@ -148,4 +148,19 @@ public class SimulationTest {
 
         assertFalse(simulation.bitIsOn(5, 5, 4));
     }
+
+    @Test
+    public void testWriteByteAlongRange() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation simulation = new Simulation(data);
+        simulation.writeData(2,2, (byte)2, 0, 5);
+
+        assertEquals(0, simulation.data(2,2));
+        assertEquals(0, simulation.value(2,2, 0, 4));
+
+        simulation.nextEpoch();
+
+        assertEquals(2, simulation.value(2,2, 0, 4));
+        assertEquals(2, simulation.data(2,2));
+    }
 }
