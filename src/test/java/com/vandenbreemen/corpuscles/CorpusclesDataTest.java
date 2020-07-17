@@ -131,4 +131,11 @@ public class CorpusclesDataTest {
         assertEquals(57, data.data(2,2,2,7));
     }
 
+    @Test
+    public void testWriteAndReadByteAtRange3() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)27, 2, 6);
+        assertEquals(27, data.data(2,2,2,6));
+    }
+
 }
