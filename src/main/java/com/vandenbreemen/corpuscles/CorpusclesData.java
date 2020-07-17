@@ -120,4 +120,28 @@ public class CorpusclesData {
             setBit(alongHeight, alongWidth, fromMinBit + i, (data & (1<<i)) != 0);
         }
     }
+
+    /**
+     * Calculates the absolute distance between two points(cells) in the grid
+     * @param p1AlongHeight
+     * @param p1AlongWidth
+     * @param p2AlongHeight
+     * @param p2AlongWidth
+     * @return
+     */
+    public int distanceBetween(int p1AlongHeight, int p1AlongWidth, int p2AlongHeight, int p2AlongWidth) {
+
+        int dh = Math.min(
+                Math.abs(p1AlongHeight - p2AlongHeight), (height() - Math.abs(p1AlongHeight - p2AlongHeight))
+        );
+        int dw = Math.min(
+                Math.abs(p1AlongWidth - p2AlongWidth), (width() - Math.abs(p1AlongWidth - p2AlongWidth))
+        );
+
+        double result = Math.sqrt(
+                (dh*dh) + (dw*dw)
+        );
+
+        return (int)Math.floor(result);
+    }
 }

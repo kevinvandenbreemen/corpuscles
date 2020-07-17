@@ -163,4 +163,33 @@ public class SimulationTest {
         assertEquals(2, simulation.value(2,2, 0, 4));
         assertEquals(2, simulation.data(2,2));
     }
+
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPoints() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation sim = new Simulation(data);
+        assertEquals(1, sim.distanceBetween(2,2, 2,3));
+    }
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPointsDiagonal() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation sim = new Simulation(data);
+        assertEquals(1, sim.distanceBetween(2,2, 3,3));
+    }
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPointsWrapAroundDiag() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation sim = new Simulation(data);
+        assertEquals(4, sim.distanceBetween(2,2, 9,9));
+    }
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPointsWrapAroundStraight() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        Simulation sim = new Simulation(data);
+        assertEquals(2, sim.distanceBetween(8,8, 0,8));
+    }
 }

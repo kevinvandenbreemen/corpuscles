@@ -155,4 +155,29 @@ public class CorpusclesDataTest {
         assertEquals(27, data.data(2,2,2,6));
     }
 
+    @Test
+    public void testCalculateDistanceBetweenTwoPoints() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        assertEquals(1, data.distanceBetween(2,2, 2,3));
+    }
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPointsDiagonal() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        assertEquals(1, data.distanceBetween(2,2, 3,3));
+    }
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPointsWrapAroundDiag() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        assertEquals(4, data.distanceBetween(2,2, 9,9));
+    }
+
+    @Test
+    public void testCalculateDistanceBetweenTwoPointsWrapAroundStraight() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        assertEquals(2, data.distanceBetween(8,8, 0,8));
+    }
+
+
 }

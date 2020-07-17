@@ -149,4 +149,16 @@ public class Simulation {
     public void writeData(int alongHeight, int alongWidth, byte data, int fromMinBit, int toMaxBit) {
         dataCopy.writeData(alongHeight, alongWidth, data, fromMinBit, toMaxBit);
     }
+
+    /**
+     * Calculates the absolute distance between two points(cells) in the grid
+     * @param p1AlongHeight
+     * @param p1AlongWidth
+     * @param p2AlongHeight
+     * @param p2AlongWidth
+     * @return
+     */
+    public int distanceBetween(int p1AlongHeight, int p1AlongWidth, int p2AlongHeight, int p2AlongWidth) {
+        return data.distanceBetween(p1AlongHeight, p1AlongWidth, p2AlongHeight, p2AlongWidth);
+    }
 }
