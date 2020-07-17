@@ -110,4 +110,25 @@ public class CorpusclesDataTest {
 
     }
 
+    @Test
+    public void testWriteAndReadByteAtRange() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)3, 2, 7);
+        assertEquals(3, data.data(2,2,2,7));
+    }
+
+    @Test
+    public void testWriteAndReadByteAtRange1() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)12, 2, 7);
+        assertEquals(12, data.data(2,2,2,7));
+    }
+
+    @Test
+    public void testWriteAndReadByteAtRange2() {
+        CorpusclesData data = new CorpusclesData(10, 10);
+        data.writeData(2,2, (byte)57, 2, 7);
+        assertEquals(57, data.data(2,2,2,7));
+    }
+
 }
